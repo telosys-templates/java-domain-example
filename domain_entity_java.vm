@@ -10,6 +10,7 @@ import java.io.Serializable;
 #foreach( $import in $java.imports($entity) )
 import $import;
 #end
+
 ##--------------------------------------------------------------------------------------------------------
 ## Data fields = fields not in Primary Key and not in selected Links    
 #set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
