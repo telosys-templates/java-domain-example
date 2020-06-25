@@ -7,19 +7,9 @@ package ${target.javaPackageFromFolder(${SRC})};
 
 import java.io.Serializable;
 
-#foreach( $import in $java.imports($entity.attributes) )
+#foreach( $import in $java.imports($entity) )
 import $import;
 #end
-
-##--- Is "import List" required ? ( number of xxxToMany links )
-#set ( $COUNT = 0 )
-#foreach( $link in $entity.selectedLinks )
-#if ( $link.isCardinalityManyToMany() || $link.isCardinalityOneToMany() ) #set ( $COUNT = $COUNT + 1 ) #end
-#end
-#if ( $COUNT > 0 )
-import java.util.List;
-#end
-
 ##--------------------------------------------------------------------------------------------------------
 ## Data fields = fields not in Primary Key and not in selected Links    
 #set( $dataFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.NOT_IN_SELECTED_LINKS ) )
