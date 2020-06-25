@@ -1,4 +1,4 @@
-# java-domain-T300
+# Telosys bundle of templates for basic Java domain classes
 
 This bundle is available for demonstration and learning purposes to get started with Telosys
 
