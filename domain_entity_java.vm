@@ -18,8 +18,6 @@ import $import;
 ## Link fields = fields not in Primary Key and used as FK in selected Links    
 #set( $linkFields = $entity.getAttributesByCriteria( $const.NOT_KEY, $const.IN_SELECTED_LINKS ) )
 ##--------------------------------------------------------------------------------------------------------
-## #set( $allMappedFields = $fn.concatLists($entity.keyAttributes, $dataFields) )
-##--------------------------------------------------------------------------------------------------------
 /**
  * Domain class for entity "${entity.name}"
  *
@@ -103,6 +101,6 @@ public class ${entity.name} implements Serializable {
     //----------------------------------------------------------------------
     // toString METHOD
     //----------------------------------------------------------------------
-## $java.toStringMethod($entity, $dataFields, "compositePrimaryKey", 4)
+## This function generates a 'toString' method with 4 blanks before each line
 $java.toStringMethod($fn.concatLists($entity.keyAttributes, $dataFields), 4)
 }
