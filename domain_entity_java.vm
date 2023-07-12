@@ -102,5 +102,7 @@ public class ${entity.name} implements Serializable {
     // toString METHOD
     //----------------------------------------------------------------------
 ## This function generates a 'toString' method with 4 blanks before each line
-$java.toStringMethod($fn.concatLists($entity.keyAttributes, $dataFields), 4)
+## $java.toStringMethod($fn.concatLists($entity.keyAttributes, $dataFields), 4)
+$java.toStringMethod($entity, 1)
+}
 }
