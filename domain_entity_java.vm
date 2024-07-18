@@ -105,4 +105,3 @@ public class ${entity.name} implements Serializable {
 ## $java.toStringMethod($fn.concatLists($entity.keyAttributes, $dataFields), 4)
 $java.toStringMethod($entity, 1)
 }
-}
